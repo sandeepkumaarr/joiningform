@@ -8,7 +8,7 @@
         md="6"
         lg="5"
       >
-        <v-form  @submit="formSubmit">
+        <v-form >
          <v-text-field
             v-model="name"
             :label="nameinput.namelabel"
@@ -68,21 +68,22 @@
           ></v-textarea>
 
           <v-file-input
-            v-model="avatar"
             accept="image/png, image/jpeg"
             label="Pick an avatar"
             prepend-icon="mdi-camera"
             :outlined=true
+
           ></v-file-input>
 
           <v-btn class="mt-5"
-            @click="submit"
             color="success"
             block
             x-large
           >
           SUBMIT
           </v-btn>
+
+          
         </v-form>
       </v-col>
     </v-row>
