@@ -78,6 +78,7 @@
           ></v-file-input> -->
 
             <v-image-input
+              name="avatar"
               v-model="avatar"
               clearable
               image-format="jpeg"
@@ -144,6 +145,8 @@ export default {
       e.preventDefault();
             
       let currentObj = this;
+
+
       this.axios
         .post("http://leave.socialbeat.in/api/team/create-user", {
           
@@ -154,6 +157,11 @@ export default {
           designation_text:this.designation_text,
           write_up: this.write_up,
           avatar: this.avatar,
+        },{
+          headers: {
+          'Cache-Control': null,
+          'X-Requested-With': null,
+        }
         })
         .then(function(response) {
           currentObj.output = response.data;
